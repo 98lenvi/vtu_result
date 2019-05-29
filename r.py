@@ -1,4 +1,3 @@
-
 from splinter import Browser
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,18 +10,15 @@ import time
 
 global browser
 browser = Browser('chrome')
-x=23
-while x < 45:
+x=10
+while x < 18:
 
-	url = "http://results.vtu.ac.in/vitaviresultcbcs2018/index.php"
+	url = "http://results.vtu.ac.in/resultsvitavicbcs_19/index.php"
 	browser.visit(url)
 	ec = expected_conditions
-	
+	time.sleep(7)
 	browser.fill('lns', '1SK16CS'+str(x).zfill(3)+'\n')
-	if ec.alertIsPresent():
-		alert = browser.get_alert()
-		alert.accept()
 	time.sleep(1)
-	screenshot_path = browser.screenshot('/home/lenvin/Documents/results/results')
+	screenshot_path = browser.screenshot('/home/lenvi/Desktop/results/results')
 	x = x+1
 
